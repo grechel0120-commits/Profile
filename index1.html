@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Chelsea Syiemlieh — Creative Portfolio</title>
+<meta name="description" content="Chelsea Syiemlieh — Artist, Graphic Designer and Freelancer.">
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Space+Grotesk:wght@400;500;600;700&display=swap');
+:root{--bg:#05070d;--panel:rgba(12,16,27,.72);--line:rgba(255,255,255,.1);--text:#f4f7ff;--muted:#9ca7bc;--cyan:#55e7ff;--violet:#9b7cff;--green:#74f5a3}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--bg);color:var(--text);font-family:Inter,sans-serif;overflow-x:hidden}a{color:inherit;text-decoration:none}
+#scene{position:fixed;inset:0;z-index:-2}.vignette{position:fixed;inset:0;z-index:-1;pointer-events:none;background:radial-gradient(circle at 50% 35%,transparent 15%,rgba(5,7,13,.18) 55%,rgba(5,7,13,.88) 100%)}
+nav{position:fixed;top:0;left:0;right:0;z-index:20;display:flex;justify-content:space-between;align-items:center;padding:22px 5vw;background:linear-gradient(to bottom,rgba(5,7,13,.85),transparent);backdrop-filter:blur(8px)}
+.logo{font-family:'Space Grotesk';font-weight:700;letter-spacing:.08em}.logo span{color:var(--cyan)}nav .links{display:flex;gap:28px;color:#c8d0df;font-size:.85rem}nav .links a:hover{color:white}
+main{width:min(1180px,90vw);margin:auto}.hero{min-height:100vh;display:flex;align-items:center;padding:110px 0 70px}.eyebrow{font-size:.75rem;letter-spacing:.24em;text-transform:uppercase;color:var(--cyan);font-weight:700;margin-bottom:18px}.hero h1{font-family:'Space Grotesk';font-size:clamp(3.5rem,8vw,8.2rem);line-height:.88;letter-spacing:-.07em;margin:0;max-width:900px}.hero h1 em{font-style:normal;color:transparent;-webkit-text-stroke:1px rgba(255,255,255,.75)}.hero p{max-width:650px;color:#bac4d7;font-size:1.08rem;line-height:1.8;margin:30px 0}.buttons{display:flex;gap:14px;flex-wrap:wrap}.btn{padding:14px 20px;border:1px solid var(--line);border-radius:9px;background:rgba(255,255,255,.05);font-weight:600;transition:.25s}.btn.primary{background:var(--cyan);color:#061016;border-color:var(--cyan)}.btn:hover{transform:translateY(-3px);box-shadow:0 12px 35px rgba(85,231,255,.16)}
+section{padding:110px 0}.section-head{display:flex;justify-content:space-between;align-items:end;gap:20px;margin-bottom:35px}.section-head h2{font-family:'Space Grotesk';font-size:clamp(2rem,5vw,4rem);margin:0;letter-spacing:-.05em}.section-head p{color:var(--muted);max-width:420px;line-height:1.7}
+.panel{background:var(--panel);border:1px solid var(--line);border-radius:18px;backdrop-filter:blur(18px);box-shadow:0 25px 80px rgba(0,0,0,.25)}.about{display:grid;grid-template-columns:1.3fr .7fr;gap:22px}.about .panel{padding:34px}.about p{color:#b8c2d3;line-height:1.9;margin:0}.facts{display:grid;gap:12px}.fact{padding:20px;border:1px solid var(--line);border-radius:13px;background:rgba(255,255,255,.025)}.fact small{display:block;color:var(--muted);margin-bottom:7px}.fact strong{font-size:1rem}
+.skills{display:flex;gap:14px;flex-wrap:wrap}.skill{padding:15px 18px;border:1px solid var(--line);background:rgba(255,255,255,.035);border-radius:100px;color:#dbe3f1}.skill::before{content:'◈';color:var(--cyan);margin-right:9px}
+.work{display:grid;grid-template-columns:repeat(2,1fr);gap:18px}.card{min-height:260px;padding:28px;display:flex;flex-direction:column;justify-content:space-between;position:relative;overflow:hidden}.card:after{content:'';position:absolute;width:220px;height:220px;border-radius:50%;right:-70px;top:-70px;background:radial-gradient(circle,rgba(85,231,255,.2),transparent 65%)}.card .tag{font-size:.7rem;text-transform:uppercase;letter-spacing:.16em;color:var(--green)}.card h3{font-family:'Space Grotesk';font-size:2rem;margin:12px 0}.card p{color:var(--muted);line-height:1.6;max-width:480px}.card a{display:inline-block;margin-top:12px;color:var(--cyan);font-weight:700}
+.contact{text-align:center;padding:90px 20px}.contact h2{font-family:'Space Grotesk';font-size:clamp(2.5rem,6vw,5.5rem);margin:0 0 20px;letter-spacing:-.06em}.contact p{color:var(--muted);margin-bottom:30px}.email{color:var(--cyan);font-size:1.05rem}.footer{padding:30px 0 45px;color:#687387;font-size:.8rem;display:flex;justify-content:space-between;border-top:1px solid var(--line)}
+.hud{position:fixed;right:24px;bottom:24px;z-index:10;color:#77839a;font:600 10px 'Space Grotesk';letter-spacing:.14em;pointer-events:none}.cross{position:fixed;left:50%;top:50%;width:18px;height:18px;transform:translate(-50%,-50%);z-index:2;pointer-events:none;opacity:.28}.cross:before,.cross:after{content:'';position:absolute;background:var(--cyan)}.cross:before{width:18px;height:1px;top:9px}.cross:after{width:1px;height:18px;left:9px}
+@media(max-width:760px){nav .links{display:none}.about,.work{grid-template-columns:1fr}.hero h1{font-size:4rem}.section-head{display:block}.section-head p{margin-top:15px}.footer{display:block}.footer span{display:block;margin-top:8px}}
+</style>
+</head>
+<body>
+<canvas id="scene"></canvas><div class="vignette"></div><div class="cross"></div>
+<nav><a class="logo" href="#top">CHELSEA<span>.FX</span></a><div class="links"><a href="#about">About</a><a href="#skills">Skills</a><a href="#work">Work</a><a href="#contact">Contact</a></div></nav>
+<main id="top">
+<section class="hero">
+<div>
+<div class="eyebrow">Artist / Graphic Designer / Freelancer</div>
+<h1>Visuals built<br>to <em>connect.</em></h1>
+<p>I’m Chelsea — a visual storyteller who combines traditional art, digital illustration and thoughtful design to turn ideas into compelling visuals.</p>
+<div class="buttons"><a class="btn primary" href="https://www.behance.net/greciasyiemlieh" target="_blank" rel="noopener">Explore portfolio ↗</a><a class="btn" href="#contact">Let’s connect</a></div>
+</div>
+</section>
+<section id="about"><div class="section-head"><h2>Player profile</h2><p>A creative profile presented like a game-development character sheet — with the portfolio taking center stage.</p></div><div class="about"><div class="panel"><p>Hi, I’m Chelsea, who thrives on visual storytelling and thoughtful design. With a foundation in traditional art and digital illustration, I love turning ideas into compelling visuals that connect, inspire, and communicate meaningfully. I’m constantly learning and experimenting across branding, layout, illustration and creative direction.</p></div><div class="facts"><div class="fact panel"><small>Base</small><strong>Shillong, Meghalaya, India</strong></div><div class="fact panel"><small>Education</small><strong>St Joseph’s University</strong></div><div class="fact panel"><small>Program</small><strong>Bachelor’s — Digital Media & Animation</strong></div></div></div></section>
+<section id="skills"><div class="section-head"><h2>Loadout</h2><p>Tools and creative strengths highlighted in the profile.</p></div><div class="skills"><div class="skill">Adobe Animate</div><div class="skill">Adobe Illustrator</div><div class="skill">Illustration</div><div class="skill">Graphic Design</div><div class="skill">Visual Storytelling</div><div class="skill">Traditional Art</div></div></section>
+<section id="work"><div class="section-head"><h2>Creative arena</h2><p>Explore the full body of work through the portfolio link below.</p></div><div class="work"><article class="card panel"><div><div class="tag">Portfolio</div><h3>Behance Gallery</h3><p>Branding, illustration, layout and other visual experiments collected in one place.</p></div><a href="https://www.behance.net/greciasyiemlieh" target="_blank" rel="noopener">Open Behance ↗</a></article><article class="card panel"><div><div class="tag">Experience</div><h3>Independent Artist</h3><p>Self-employed creative work driven by experimentation, visual storytelling and a desire to keep growing.</p></div><a href="mailto:grechel0120@gmail.com">Start a conversation ↗</a></article></div></section>
+<section id="contact"><div class="contact panel"><div class="eyebrow">Ready when you are</div><h2>Let’s create<br>something meaningful.</h2><p>For collaborations, opportunities or creative projects.</p><a class="email" href="mailto:grechel0120@gmail.com">grechel0120@gmail.com</a></div></section>
+<div class="footer"><span>© 2026 Chelsea Syiemlieh</span><span>Designed as a real-time 3D portfolio experience.</span></div>
+</main>
+<div class="hud">MOUSE INPUT // ONLINE</div>
+<script type="module">
+import * as THREE from 'https://cdn.jsdelivr.net/npm/three@0.180.0/build/three.module.js';
+const canvas=document.querySelector('#scene');
+const renderer=new THREE.WebGLRenderer({canvas,antialias:true,alpha:true}); renderer.setPixelRatio(Math.min(devicePixelRatio,2)); renderer.setSize(innerWidth,innerHeight); renderer.outputColorSpace=THREE.SRGBColorSpace;
+const scene=new THREE.Scene(); scene.fog=new THREE.FogExp2(0x05070d,.035);
+const camera=new THREE.PerspectiveCamera(52,innerWidth/innerHeight,.1,100); camera.position.set(0,1.2,8);
+const ambient=new THREE.AmbientLight(0x8aaaff,.7); scene.add(ambient);
+const key=new THREE.PointLight(0x55e7ff,25,18); key.position.set(4,4,3); scene.add(key);
+const rim=new THREE.PointLight(0x9b7cff,20,16); rim.position.set(-5,1,-1); scene.add(rim);
+const world=new THREE.Group(); scene.add(world);
+const matC=new THREE.MeshStandardMaterial({color:0x55e7ff,metalness:.75,roughness:.2,wireframe:false,transparent:true,opacity:.88});
+const matV=new THREE.MeshStandardMaterial({color:0x9b7cff,metalness:.8,roughness:.25,wireframe:true,transparent:true,opacity:.6});
+const matG=new THREE.MeshStandardMaterial({color:0x74f5a3,metalness:.65,roughness:.28,wireframe:true,transparent:true,opacity:.55});
+const objects=[];
+function add(mesh,x,y,z,speed){mesh.position.set(x,y,z);mesh.userData={base:mesh.position.clone(),speed};world.add(mesh);objects.push(mesh)}
+add(new THREE.Mesh(new THREE.IcosahedronGeometry(1.25,1),matV),-4.2,2,-1,.65);
+add(new THREE.Mesh(new THREE.TorusKnotGeometry(.75,.18,128,16),matC),3.6,1.5,-.8,.45);
+add(new THREE.Mesh(new THREE.BoxGeometry(1.25,1.25,1.25),matG),4,-2,-2,.55);
+add(new THREE.Mesh(new THREE.OctahedronGeometry(1,0),matC),-3,-2,-1,.8);
+add(new THREE.Mesh(new THREE.TorusGeometry(1.1,.035,12,64),matG),0,2.6,-2,.3);
+// floating wireframe shards
+for(let i=0;i<18;i++){const g=new THREE.TetrahedronGeometry(.12+Math.random()*.35,0);const m=new THREE.Mesh(g,i%2?matV:matC);add(m,(Math.random()-.5)*13,(Math.random()-.5)*8,(Math.random()-.5)*7-2,.25+Math.random()*.6)}
+// grid floor
+const grid=new THREE.GridHelper(32,32,0x55e7ff,0x25304a); grid.material.transparent=true;grid.material.opacity=.12;grid.position.y=-3.2;grid.rotation.y=.15;scene.add(grid);
+// particle field
+const count=900,pos=new Float32Array(count*3);for(let i=0;i<count;i++){pos[i*3]=(Math.random()-.5)*22;pos[i*3+1]=(Math.random()-.5)*13;pos[i*3+2]=(Math.random()-.5)*15-2}const pg=new THREE.BufferGeometry();pg.setAttribute('position',new THREE.BufferAttribute(pos,3));const pm=new THREE.PointsMaterial({color:0x9fb8ff,size:.018,transparent:true,opacity:.6});scene.add(new THREE.Points(pg,pm));
+let mx=0,my=0,tx=0,ty=0;window.addEventListener('pointermove',e=>{tx=(e.clientX/innerWidth-.5)*2;ty=(e.clientY/innerHeight-.5)*2});
+const clock=new THREE.Clock();
+function animate(){requestAnimationFrame(animate);const t=clock.getElapsedTime();mx+=(tx-mx)*.035;my+=(ty-my)*.035;camera.position.x=mx*.65;camera.position.y=1.2-my*.45;camera.lookAt(mx*.2,-.15,0);world.rotation.y=mx*.12;world.rotation.x=my*.06;objects.forEach((o,i)=>{const b=o.userData.base;o.rotation.x+=.002*o.userData.speed;o.rotation.y+=.004*o.userData.speed;o.position.x=b.x+Math.sin(t*o.userData.speed+i)*.08*o.userData.speed;o.position.y=b.y+Math.cos(t*o.userData.speed+i)*.1*o.userData.speed});grid.rotation.z=mx*.025;renderer.render(scene,camera)}animate();
+window.addEventListener('resize',()=>{camera.aspect=innerWidth/innerHeight;camera.updateProjectionMatrix();renderer.setSize(innerWidth,innerHeight)});
+</script>
+</body></html>
